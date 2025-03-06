@@ -1,0 +1,127 @@
+:root {
+    --columns: 6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+#img-container {
+    width: 100%;
+    min-height: 150vh;
+
+    line-height: 0;
+    -webkit-column-count: var(--columns);
+    -webkit-column-gap:   0px;
+    -moz-column-count:    var(--columns);
+    -moz-column-gap:      0px;
+    column-count:         var(--columns);
+    column-gap:           0px;  
+}
+img {
+    width: 100% !important;
+    height: auto !important;
+    opacity: 0.001;
+    transition: opacity 0.75s;
+}
+.spawned {
+    opacity: 1;
+}
+
+/* ########################### */
+/* # Hero foreground content # */
+/* ########################### */
+#hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1ad5;
+}
+/* Main logo */
+#hero-content #aura-logo {
+    width: 50vw !important;
+}
+/* Full name text */
+#hero-content h1 {
+    margin: 0;
+    color: #006aa4;
+    text-align: center;
+    font-size: 2.2vw;
+}
+/* Button container */
+#hero-content > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+#hero-content a {
+    padding: 1vw;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #006aa4;
+    border-radius: 0.7vw;
+}
+#hero-content a:hover {
+    filter: brightness(110%);
+}
+
+@media (max-width: 1200px ) {
+    :root {
+        --columns: 5;
+    }
+}
+@media (max-width: 1000px ) {
+    :root {
+        --columns: 4;
+    }
+}
+@media (max-width: 900px ) {
+    :root {
+        --columns: 3;
+    }
+}
+@media (max-width: 800px ) {
+    :root {
+        /* --columns: 2; */
+    }
+}
+@media (max-width: 600px ) {
+    :root {
+        /* --columns: 1; */
+    }
+    #hero-content {
+        gap: 6vw;
+    }
+    #hero-content #aura-logo {
+        width: 90vw !important;
+    }
+    #hero-content h1 {
+        font-size: 7.5vw;
+    }
+    #hero-content>div {
+        flex-direction: column;
+        gap: 6vw;
+    }
+    #hero-content a {
+        font-size: 6vw;
+        padding: 3vw;
+        border-radius: 2.8vw;
+    }
+}
